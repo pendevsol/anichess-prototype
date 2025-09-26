@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anichess Prototype</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: white;
+      text-shadow: 2px 2px 5px black;
+      margin-top: 20px;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(8, 60px);
+      grid-template-rows: repeat(8, 60px);
+      gap: 2px;
+      margin: 30px auto;
+      width: 484px;
+      border: 4px solid white;
+      background: rgba(0,0,0,0.6);
+    }
+    .square {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+    }
+    .dark { background: rgba(20,20,20,0.7); }
+    .light { background: rgba(220,220,220,0.3); }
+    .piece {
+      max-width: 50px;
+      max-height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Anichess Prototype Board</h1>
+  <div class="board">
+    <div class="square dark"><img src="fire-knight.png" class="piece"></div>
+    <div class="square light"><img src="water-queen.png" class="piece"></div>
+    <div class="square dark"><img src="shadow-bishop.png" class="piece"></div>
+    <div class="square light"></div>
+    <script>
+      const board = document.querySelector('.board');
+      while (board.children.length < 64) {
+        const sq = document.createElement('div');
+        sq.className = 'square ' + ((board.children.length + Math.floor(board.children.length/8)) % 2 ? 'dark' : 'light');
+        board.appendChild(sq);
+      }
+    </script>
+  </div>
+</body>
+</html>

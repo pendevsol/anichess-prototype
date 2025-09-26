@@ -1,2 +1,3 @@
-# anichess-prototype
-Prototype demo for anichess idea 
+# Anichess Prototype ♟️🔥💧🌑
+
+Simple HTML demo board with custom elemental pieces.
